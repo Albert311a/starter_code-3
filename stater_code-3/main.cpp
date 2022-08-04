@@ -8,10 +8,7 @@
 #include <random>
 #include <iomanip>
 
-#include "Image.h"
-#include "Pixel.h"
-#include "RGBPixel.h"
-#include "GreyscalePixel.h"
+#include "Image.cpp"
 
 #define IMAGE_ROWS  10
 #define IMAGE_COLS  10
@@ -34,7 +31,7 @@ int main(){
             pixrgb['r'] = uniform_dist(engine);
             pixrgb['g'] = uniform_dist(engine);
             pixrgb['b'] = uniform_dist(engine);
-            
+
             imageRGB.set(i, j, pixrgb);
         }
     }
@@ -43,7 +40,7 @@ int main(){
     std::cout << "*** Printing RGB image Brightness ***" << std::endl;
     for (int i = 0; i != IMAGE_ROWS; ++i) {
         for (int j = 0; j != IMAGE_COLS; ++j) {
-            std::cout << std::setfill('0') << std::setw(3) 
+            std::cout << std::setfill('0') << std::setw(3)
                             << imageRGB.get(i, j).getBrightness() << " ";
         }
         std::cout << std::endl;
@@ -68,7 +65,7 @@ int main(){
     std::cout << "*** Printing Greyscale image Brightness ***" << std::endl;
     for (int i = 0; i != IMAGE_ROWS; ++i) {
         for (int j = 0; j != IMAGE_COLS; ++j) {
-            std::cout << std::setfill('0') << std::setw(3) 
+            std::cout << std::setfill('0') << std::setw(3)
                                 << imageGS.get(i, j).getBrightness() << " ";
         }
         std::cout << std::endl;
